@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="th" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Resume - นายชินกฤต ปัดทุม (Chinnakrit Patthum) | [IP1]</title>
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body class="bg-body-tertiary">
+
+  <!-- =========================================================
+       Requirement 9 & 10:
+       - สร้าง Navbar แบบ Toggle ตาม section ที่มี
+       - เมื่อจอมีขนาดเล็กลงให้ซ่อนเมนูใน Hamburger button (Responsive)
+       - เมื่อกดที่ลิ้งค์บน Navbar แล้วให้ทำการ navigate ไปยัง section นั้น (href="#id_name")
+       ========================================================= -->
+  <nav class="navbar navbar-expand-lg sticky-top bg-body shadow-sm border-bottom d-print-none" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary d-flex align-items-center gap-2" href="#about">
+        <i class="bi bi-person-badge-fill"></i>
+        <span>MyResume</span>
+      </a>
+
+      <!-- Hamburger Button (แสดงเมื่อหน้าจอมีขนาดเล็กลง) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#resumeNavbar" aria-controls="resumeNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- รายการเมนู Anchor Links ไปยังแต่ละ Section -->
+      <div class="collapse navbar-collapse" id="resumeNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active fw-semibold" href="#about" data-i18n="nav_about">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#education" data-i18n="nav_education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#employment" data-i18n="nav_employment">Employment History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills" data-i18n="nav_skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#ai-dev" data-i18n="nav_ai">AI &amp; Highlights</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact" data-i18n="nav_contact">Contact</a>
+          </li>
+        </ul>
+
+        <!-- ปุ่มควบคุมเสริมด้วย JavaScript + Bootstrap -->
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <!-- สลับภาษา TH / EN -->
+          <button id="langToggleBtn" class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-1" type="button">
+            <i class="bi bi-translate"></i>
+            <span id="langLabel">EN</span>
+          </button>
+          <!-- สลับโหมดมืด / สว่าง -->
+          <button id="themeToggleBtn" class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-1" type="button">
+            <i id="themeIcon" class="bi bi-moon-stars-fill"></i>
+            <span id="themeLabel" class="d-none d-sm-inline">Dark</span>
+          </button>
+          <!-- ดาวน์โหลดไฟล์ CV PDF -->
+          <a href="Chinnakrit .Pat CV.pdf" download class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1">
+            <i class="bi bi-file-earmark-pdf-fill"></i>
+            <span data-i18n="btn_download_cv">CV PDF</span>
+          </a>
+          <!-- พิมพ์หน้าเว็บ -->
+          <button id="printBtn" class="btn btn-primary btn-sm d-flex align-items-center gap-1" type="button">
+            <i class="bi bi-printer-fill"></i>
+            <span data-i18n="btn_print">Print</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4 py-lg-5">
+
+    <!-- =========================================================
+         SECTION 1: เกี่ยวกับตัวฉัน (About Me)
+         Requirement 1: การใช้รูป Display แบบวงกลม (rounded-circle)
+         Requirement 2: ชื่อ-นามสกุลแบบ h1 (<h1>)
+         Requirement 3: สาขาวิชาที่นักศึกษาสังกัด เป็นตัวเอียง em (<em>)
+         Requirement 4: ชื่อคณะ
+         Requirement 5: ชื่อสถาบันฯ โดยมีลิ้งค์ไปยังเว็บไซต์สถาบัน (http://pim.ac.th)
+         Requirement 6: ประวัติโดยย่อของตนเอง เป็นคำแนะนำสั้น ๆ
+         Requirement 7: การใช้เส้นแบ่งย่อหน้า (<hr>)
+         Requirement 11: Responsive Grid (Desktop 4, Tablet 2, มือถือ 1)
+         ========================================================= -->
+    <section id="about" class="card border-0 shadow-sm rounded-4 mb-4 overflow-hidden">
+      <div class="bg-primary bg-gradient p-2 d-print-none"></div>
+      <div class="card-body p-4 p-lg-5 text-center">
+
+        <!-- 1. การใช้รูป Display แบบวงกลม -->
+        <div class="mb-3">
+          <img src="S__57597955.jpg" alt="รูปโปรไฟล์ นายชินกฤต ปัดทุม (Chinnakrit Patthum)" class="rounded-circle shadow border border-4 border-primary-subtle object-fit-cover" width="180" height="180">
+        </div>
+
+        <!-- 2. ชื่อ-นามสกุลแบบ h1 -->
+        <h1 class="display-6 fw-bold mb-2" data-i18n="full_name">นายชินกฤต ปัดทุม (CHINNAKRIT PATTHUM)</h1>
+
+        <!-- 3. สาขาวิชาที่นักศึกษาสังกัด เป็นตัวเอียง em -->
+        <p class="fs-5 text-primary mb-1">
+          <em data-i18n="major_name">สาขาวิชาเทคโนโลยีดิจิทัลและสารสนเทศ (Digital and Information Technology)</em>
+        </p>
+
+        <!-- 4. ชื่อคณะ -->
+        <p class="fs-5 fw-semibold mb-2" data-i18n="faculty_name">
+          คณะวิศวกรรมศาสตร์และเทคโนโลยี (Faculty of Engineering and Technology)
+        </p>
+
+        <!-- 5. ชื่อสถาบันฯ โดยมีลิ้งค์ไปยังเว็บไซต์สถาบัน (http://pim.ac.th) -->
+        <p class="fs-5 mb-3">
+          <a href="http://pim.ac.th" target="_blank" rel="noopener noreferrer" class="link-primary text-decoration-none fw-semibold">
+            <i class="bi bi-mortarboard-fill me-1"></i><span data-i18n="university_name">สถาบันการจัดการปัญญาภิวัฒน์ (Panyapiwat Institute of Management - PIM)</span>
+            <i class="bi bi-box-arrow-up-right ms-1 small"></i>
+          </a>
+        </p>
+
+        <!-- 7. การใช้เส้นแบ่งย่อหน้า -->
+        <hr class="my-4 opacity-25">
+
+        <!-- 6. ประวัติโดยย่อของตนเอง เป็นคำแนะนำสั้น ๆ -->
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10">
+            <h2 class="h4 fw-bold text-primary mb-3">
+              <i class="bi bi-person-lines-fill me-2"></i><span data-i18n="sec_about_title">เกี่ยวกับตัวฉัน (About Me)</span>
+            </h2>
+            <p class="text-body-secondary fs-6 lh-lg mb-3" data-i18n="about_p1">
+              Application Support Specialist ที่มีความละเอียดรอบคอบ มีประสบการณ์ตรงในการตรวจสอบและแก้ไขปัญหาบนระบบ Production (Production Incident Investigation) การเขียนและรันคำสั่ง SQL Query รวมถึงการมอนิเตอร์การทำงานของระบบฐานข้อมูลในระดับองค์กรที่ บริษัท โกซอฟท์ (ประเทศไทย) จำกัด
+            </p>
+
+            <!-- 7. การใช้เส้นแบ่งย่อหน้า -->
+            <hr class="my-3 w-50 mx-auto opacity-25">
+
+            <p class="text-body-secondary fs-6 lh-lg mb-4" data-i18n="about_p2">
+              มีความเชี่ยวชาญในการใช้งาน Microsoft SQL Server, Azure Data Studio และการวิเคราะห์ Log เพื่อค้นหาสาเหตุที่แท้จริงของปัญหา (Root Cause Analysis) พร้อมส่งมอบแนวทางแก้ไขปัญหาทางเทคนิค วิเคราะห์ข้อมูลทางธุรกิจ และประสานงานร่วมกับทีมต่าง ๆ (Cross-functional Teams) ได้อย่างมีประสิทธิภาพ
+            </p>
+          </div>
+        </div>
+
+        <!-- Requirement 11: Responsive 4 แถว/คอลัมน์บน Desktop (col-lg-3), 2 บน Tablet (col-md-6), 1 บนมือถือ (col-12) -->
+        <div class="row g-3 text-start mt-2">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="p-3 rounded-3 border bg-body-tertiary h-100">
+              <i class="bi bi-search-heart-fill fs-3 text-primary"></i>
+              <h3 class="h6 fw-bold mt-2 mb-1" data-i18n="hl1_title">Incident Investigation</h3>
+              <p class="small text-body-secondary mb-0" data-i18n="hl1_desc">วิเคราะห์ Application &amp; Database Logs เพื่อตรวจสอบและแก้ไขปัญหาในระบบ Production</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="p-3 rounded-3 border bg-body-tertiary h-100">
+              <i class="bi bi-database-fill-check fs-3 text-success"></i>
+              <h3 class="h6 fw-bold mt-2 mb-1" data-i18n="hl2_title">SQL &amp; Data Verification</h3>
+              <p class="small text-body-secondary mb-0" data-i18n="hl2_desc">รันคำสั่ง SQL ตรวจสอบความถูกต้องของข้อมูลใบเสร็จและธุรกรรมใน Microsoft SQL Server</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="p-3 rounded-3 border bg-body-tertiary h-100">
+              <i class="bi bi-bug-fill fs-3 text-danger"></i>
+              <h3 class="h6 fw-bold mt-2 mb-1" data-i18n="hl3_title">Root Cause Analysis</h3>
+              <p class="small text-body-secondary mb-0" data-i18n="hl3_desc">ตรวจสอบความคลาดเคลื่อนของข้อมูลและวิเคราะห์หาสาเหตุหลักของข้อผิดพลาดในระบบ</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="p-3 rounded-3 border bg-body-tertiary h-100">
+              <i class="bi bi-stars fs-3 text-warning"></i>
+              <h3 class="h6 fw-bold mt-2 mb-1" data-i18n="hl4_title">AI-Assisted Dev</h3>
+              <p class="small text-body-secondary mb-0" data-i18n="hl4_desc">ประยุกต์ใช้ Prompt Engineering และเครื่องมือ AI สมัยใหม่ในการเขียนโค้ดและดีบัก</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. เส้นแบ่งย่อหน้า / ส่วนเนื้อหา -->
+    <hr class="my-4 opacity-25">
+
+    <!-- =========================================================
+         SECTION 2: การศึกษา (Education)
+         ========================================================= -->
+    <section id="education" class="card border-0 shadow-sm rounded-4 mb-4">
+      <div class="card-body p-4 p-lg-5">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+          <h2 class="h4 fw-bold mb-0 d-flex align-items-center gap-2">
+            <span class="badge bg-info text-dark rounded-3 p-2"><i class="bi bi-mortarboard-fill"></i></span>
+            <span data-i18n="sec_education">การศึกษา (Education)</span>
+          </h2>
+          <span class="badge bg-success-subtle text-success-emphasis border border-success-subtle rounded-pill px-3 py-2 fw-bold">
+            <i class="bi bi-award-fill me-1"></i>GPA 3.60
+          </span>
+        </div>
+
+        <hr class="my-3 opacity-25">
+
+        <!-- สถาบันการจัดการปัญญาภิวัฒน์ (PIM) -->
+        <div class="border-start border-4 border-primary ps-3 ms-1 mb-4">
+          <div class="d-flex flex-wrap justify-content-between align-items-center mb-1">
+            <h3 class="h5 fw-bold mb-0">
+              <a href="http://pim.ac.th" target="_blank" rel="noopener noreferrer" class="link-primary text-decoration-none" data-i18n="pim_edu_title">
+                สถาบันการจัดการปัญญาภิวัฒน์ (Panyapiwat Institute of Management - PIM)
+              </a>
+            </h3>
+            <span class="badge text-bg-primary">Current</span>
+          </div>
+          <p class="mb-1">
+            <em class="fw-semibold text-primary-emphasis" data-i18n="major_name">สาขาวิชาเทคโนโลยีดิจิทัลและสารสนเทศ (Digital and Information Technology)</em>
+          </p>
+          <p class="small text-body-secondary mb-0" data-i18n="faculty_name">
+            คณะวิศวกรรมศาสตร์และเทคโนโลยี (Faculty of Engineering and Technology)
+          </p>
+        </div>
+
+        <hr class="my-3 opacity-25">
+
+        <!-- วิทยาลัยอาชีวศึกษากาฬสินธุ์ (Kalasin Vocational College) จาก CV -->
+        <div class="border-start border-4 border-info ps-3 ms-1 mb-4">
+          <div class="d-flex flex-wrap justify-content-between align-items-center mb-1">
+            <h3 class="h5 fw-bold mb-0" data-i18n="edu_school">วิทยาลัยอาชีวศึกษากาฬสินธุ์ (Kalasin Vocational College)</h3>
+            <span class="badge text-bg-secondary">2021 - 2026</span>
+          </div>
+          <p class="mb-2">
+            <em class="fw-semibold text-info-emphasis" data-i18n="edu_major">สาขาเทคโนโลยีธุรกิจดิจิทัล (Digital Business Technology) — GPA 3.6</em>
+          </p>
+          <ul class="list-unstyled mb-0 text-body-secondary small">
+            <li class="mb-2 d-flex align-items-start gap-2">
+              <i class="bi bi-caret-right-fill text-info mt-1"></i>
+              <span data-i18n="edu_d1">มุ่งเน้นด้านเทคโนโลยีดิจิทัล การพัฒนาซอฟต์แวร์ การวิเคราะห์ข้อมูล และระบบสารสนเทศเพื่อสนับสนุนและยกระดับการดำเนินงานทางธุรกิจสมัยใหม่ (Focuses on digital technologies, software development, data analytics, and information systems to support and improve modern business operations.)</span>
+            </li>
+            <li class="d-flex align-items-start gap-2">
+              <i class="bi bi-caret-right-fill text-info mt-1"></i>
+              <span data-i18n="edu_d2">มุ่งเน้นด้านการเขียนโปรแกรม การจัดการฐานข้อมูล ระบบสารสนเทศทางธุรกิจ และการประยุกต์ใช้เทคโนโลยีคอมพิวเตอร์ในองค์กร (Focuses on programming, database management, business information systems, and the application of computer technology to support organizational and business processes.)</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Certification -->
+        <div class="alert alert-secondary border-0 d-flex align-items-center gap-3 mb-0 rounded-3">
+          <i class="bi bi-patch-check-fill fs-3 text-primary"></i>
+          <div>
+            <div class="small text-uppercase fw-bold text-body-secondary" data-i18n="cert_title">วุฒิบัตร (Certification)</div>
+            <div class="fw-semibold" data-i18n="cert_name">ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.) / Higher Vocational Certificate (HVC)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. เส้นแบ่งย่อหน้า / ส่วนเนื้อหา -->
+    <hr class="my-4 opacity-25">
+
+    <!-- =========================================================
+         SECTION 3: ประวัติการทำงาน / การฝึกงาน (Employment History)
+         ========================================================= -->
+    <section id="employment" class="card border-0 shadow-sm rounded-4 mb-4">
+      <div class="card-body p-4 p-lg-5">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+          <h2 class="h4 fw-bold mb-0 d-flex align-items-center gap-2">
+            <span class="badge bg-primary rounded-3 p-2"><i class="bi bi-briefcase-fill"></i></span>
+            <span data-i18n="sec_experience">ประวัติการทำงานและฝึกงาน (Employment History)</span>
+          </h2>
+          <span class="badge bg-primary-subtle text-primary-emphasis border border-primary-subtle rounded-pill px-3 py-2 fw-semibold" data-i18n="exp_period">
+            Oct 2024 - Present
+          </span>
+        </div>
+
+        <hr class="my-3 opacity-25">
+
+        <div class="border-start border-4 border-primary ps-3 ms-1">
+          <h3 class="h5 fw-bold mb-1" data-i18n="exp_title">
+            APPLICATION SUPPORT - IT SYSTEM STORE SERVICE
+          </h3>
+          <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+            <span class="fw-semibold text-primary" data-i18n="exp_company">
+              <i class="bi bi-building me-1"></i>GOSOFT (THAILAND) CO., LTD. (บริษัท โกซอฟท์ (ประเทศไทย) จำกัด)
+            </span>
+            <span class="text-body-secondary">•</span>
+            <span class="badge text-bg-secondary" data-i18n="exp_role">Trainee Counter Service</span>
+          </div>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-transparent px-0 py-2 d-flex align-items-start gap-2 border-0">
+              <i class="bi bi-check2-circle text-primary mt-1"></i>
+              <span data-i18n="exp_b1">Analyzed application and database logs to investigate production incidents. (วิเคราะห์ Log ของแอปพลิเคชันและฐานข้อมูลเพื่อตรวจสอบปัญหาที่เกิดขึ้นบนระบบ Production)</span>
+            </li>
+            <li class="list-group-item bg-transparent px-0 py-2 d-flex align-items-start gap-2 border-0">
+              <i class="bi bi-check2-circle text-primary mt-1"></i>
+              <span data-i18n="exp_b2">Executed SQL queries to retrieve, validate, and analyze business data. (เขียนและรันคำสั่ง SQL เพื่อดึงข้อมูล ตรวจสอบความถูกต้อง และวิเคราะห์ข้อมูลทางธุรกิจ)</span>
+            </li>
+            <li class="list-group-item bg-transparent px-0 py-2 d-flex align-items-start gap-2 border-0">
+              <i class="bi bi-check2-circle text-primary mt-1"></i>
+              <span data-i18n="exp_b3">Verified receipt and transaction records stored in Microsoft SQL Server. (ตรวจสอบข้อมูลใบเสร็จและรายการธุรกรรมที่จัดเก็บใน Microsoft SQL Server)</span>
+            </li>
+            <li class="list-group-item bg-transparent px-0 py-2 d-flex align-items-start gap-2 border-0">
+              <i class="bi bi-check2-circle text-primary mt-1"></i>
+              <span data-i18n="exp_b4">Investigated data inconsistencies and supported root cause analysis. (ตรวจสอบความไม่สอดคล้องของข้อมูลและสนับสนุนการวิเคราะห์หาสาเหตุที่แท้จริง)</span>
+            </li>
+            <li class="list-group-item bg-transparent px-0 py-2 d-flex align-items-start gap-2 border-0">
+              <i class="bi bi-check2-circle text-primary mt-1"></i>
+              <span data-i18n="exp_b5">Monitored database operations and assisted in resolving application errors. (ติดตามการทำงานของระบบฐานข้อมูลและช่วยแก้ไขข้อผิดพลาดของแอปพลิเคชัน)</span>
+            </li>
+            <li class="list-group-item bg-transparent px-0 py-2 d-flex align-items-start gap-2 border-0">
+              <i class="bi bi-check2-circle text-primary mt-1"></i>
+              <span data-i18n="exp_b6">Prepared query results and technical findings for support teams. (จัดทำผลลัพธ์จากการ Query และสรุปข้อมูลทางเทคนิคให้กับทีมซัพพอร์ต)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. เส้นแบ่งย่อหน้า / ส่วนเนื้อหา -->
+    <hr class="my-4 opacity-25">
+
+    <!-- =========================================================
+         SECTION 4: ทักษะความสามารถ (Skills)
+         Requirement 11: ให้ทำเว็บแบบ Responsive
+         (Desktop แสดงข้อมูล 4 แถว/คอลัมน์ col-lg-3, Tablet แสดงข้อมูล 2 แถว/คอลัมน์ col-md-6 และ มือถือ 1 แถว/คอลัมน์ col-12)
+         ========================================================= -->
+    <section id="skills" class="card border-0 shadow-sm rounded-4 mb-4">
+      <div class="card-body p-4 p-lg-5">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+          <div>
+            <h2 class="h4 fw-bold mb-1 d-flex align-items-center gap-2">
+              <span class="badge bg-success rounded-3 p-2"><i class="bi bi-cpu-fill"></i></span>
+              <span data-i18n="sec_skills">ทักษะและเครื่องมือ (Skills &amp; Tools)</span>
+            </h2>
+            <p class="small text-body-secondary mb-0" data-i18n="skills_sub">
+              จัดเรียงแบบ Responsive Grid: Desktop แสดง 4 คอลัมน์, Tablet แสดง 2 คอลัมน์ และ มือถือแสดง 1 คอลัมน์
+            </p>
+          </div>
+
+          <!-- ปุ่มกรองหมวดหมู่ทักษะ -->
+          <div class="btn-group btn-group-sm d-print-none" role="group" aria-label="Skill category filter">
+            <button type="button" class="btn btn-outline-secondary active filter-skill-btn" data-filter="all" data-i18n="filter_all">ทั้งหมด (8)</button>
+            <button type="button" class="btn btn-outline-secondary filter-skill-btn" data-filter="tech" data-i18n="filter_tech">Technical Skills (4)</button>
+            <button type="button" class="btn btn-outline-secondary filter-skill-btn" data-filter="tool" data-i18n="filter_tools">Tools (4)</button>
+          </div>
+        </div>
+
+        <hr class="my-3 opacity-25">
+
+        <!-- ช่องค้นหาทักษะ -->
+        <div class="input-group input-group-sm mb-4 d-print-none">
+          <span class="input-group-text bg-body"><i class="bi bi-search"></i></span>
+          <input type="text" id="skillSearchInput" class="form-control" placeholder="ค้นหาทักษะหรือเครื่องมือ (เช่น SQL, Linux, Python, HTML)...">
+        </div>
+
+        <!-- Requirement 11: Grid Row แสดงผล Desktop 4 (col-lg-3), Tablet 2 (col-md-6), Mobile 1 (col-12) -->
+        <div id="skillsContainer" class="row g-3">
+          <!-- สร้างการ์ดด้วย JavaScript (app.js) โดยใช้คลาส col-12 col-md-6 col-lg-3 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. เส้นแบ่งย่อหน้า / ส่วนเนื้อหา -->
+    <hr class="my-4 opacity-25">
+
+    <!-- =========================================================
+         SECTION 5: AI Development & Support Workflow (และอื่น ๆ ตาม Requirement 8 & 11)
+         ========================================================= -->
+    <section id="ai-dev" class="card border-0 shadow-sm rounded-4 mb-4">
+      <div class="card-body p-4 p-lg-5">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+          <div>
+            <h2 class="h4 fw-bold mb-1 d-flex align-items-center gap-2">
+              <span class="badge bg-warning text-dark rounded-3 p-2"><i class="bi bi-stars"></i></span>
+              <span data-i18n="sec_ai">AI-Assisted Development &amp; Tools</span>
+            </h2>
+            <p class="small text-body-secondary mb-0" data-i18n="ai_desc">
+              Expert in prompt engineering, code generation, debugging, and refactoring using Cursor, Windsurf, GitHub Copilot, ChatGPT, Claude, and Gemini.
+            </p>
+          </div>
+        </div>
+
+        <hr class="my-3 opacity-25">
+
+        <!-- Requirement 11: Responsive Grid (Desktop 4, Tablet 2, Mobile 1) -->
+        <div class="row g-3" id="aiToolsContainer">
+          <!-- สร้างการ์ดด้วย JavaScript (app.js) โดยใช้คลาส col-12 col-md-6 col-lg-3 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. เส้นแบ่งย่อหน้า / ส่วนเนื้อหา -->
+    <hr class="my-4 opacity-25">
+
+    <!-- =========================================================
+         SECTION 6: ช่องทางติดต่อกลับ (Contact)
+         Requirement 12:
+         12.1 มีข้อมูลการติดต่อต่าง ๆ โดยใช้ Ordered List (<ol>)
+         12.2 อีเมล์ ใช้อีเมล์สถาบันฯ (ใช้ภาพแทน @ เพื่อป้องกันการโดนสแปม หลีกเลี่ยงการใช้เมลจริง)
+         12.3 เบอร์โทรศัพท์ (หลีกเลี่ยงการใช้เบอร์จริง)
+         12.4 ที่อยู่ (หลีกเลี่ยงการใช้สถานที่จริง)
+         12.5 อื่น ๆ ตามต้องการ
+         ========================================================= -->
+    <section id="contact" class="card border-0 shadow-sm rounded-4 mb-4">
+      <div class="card-body p-4 p-lg-5">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+          <div>
+            <h2 class="h4 fw-bold mb-1 d-flex align-items-center gap-2">
+              <span class="badge bg-danger rounded-3 p-2"><i class="bi bi-envelope-paper-fill"></i></span>
+              <span data-i18n="sec_contact">ช่องทางติดต่อกลับ (Contact Information)</span>
+            </h2>
+            <p class="small text-body-secondary mb-0" data-i18n="contact_sub">
+              แสดงข้อมูลการติดต่อด้วย Ordered List (<code>&lt;ol&gt;</code>) พร้อมใช้รูปภาพแทนเครื่องหมาย @ และใช้ข้อมูลสมมติเพื่อความปลอดภัยตามข้อกำหนด IP1
+            </p>
+          </div>
+        </div>
+
+        <hr class="my-3 opacity-25">
+
+        <!-- 12.1 ใช้ Ordered List (<ol>) -->
+        <ol class="list-group list-group-numbered">
+          <!-- 12.2 อีเมล์สถาบันฯ ใช้ภาพแทน @ เพื่อป้องกันการโดนสแปม หลีกเลี่ยงการใช้เมลจริง -->
+          <li class="list-group-item d-flex flex-wrap align-items-center gap-2 py-3 bg-body-tertiary">
+            <strong data-i18n="contact_email_label">อีเมล์สถาบันฯ (Institutional Email):</strong>
+            <span class="font-monospace fw-semibold text-primary d-inline-flex align-items-center">
+              6952300xxx<img src="at.png" alt="@" width="18" height="18" class="mx-1" title="@">stu.pim.ac.th
+            </span>
+            <span class="badge bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle rounded-pill" data-i18n="contact_email_note">
+              ใช้รูปภาพแทน @ และใช้อีเมลสมมติเพื่อป้องกันสแปม
+            </span>
+          </li>
+
+          <!-- 12.3 เบอร์โทรศัพท์ (หลีกเลี่ยงการใช้เบอร์จริง) -->
+          <li class="list-group-item d-flex flex-wrap align-items-center gap-2 py-3 bg-body-tertiary">
+            <strong data-i18n="contact_phone_label">เบอร์โทรศัพท์ (Phone Number):</strong>
+            <span class="font-monospace">089-xxx-xxxx (089-123-4567)</span>
+            <span class="badge bg-secondary-subtle text-secondary-emphasis border border-secondary-subtle rounded-pill" data-i18n="contact_phone_note">
+              เบอร์โทรศัพท์สมมติตามข้อกำหนด
+            </span>
+          </li>
+
+          <!-- 12.4 ที่อยู่ (หลีกเลี่ยงการใช้สถานที่จริง) -->
+          <li class="list-group-item d-flex flex-wrap align-items-center gap-2 py-3 bg-body-tertiary">
+            <strong data-i18n="contact_addr_label">ที่อยู่ (Address):</strong>
+            <span data-i18n="contact_addr_val">85/168 ถนนแจ้งวัฒนะ ตำบลบางตลาด อำเภอปากเกร็ด จังหวัดนนทบุรี 11120 (สถานที่สมมติ)</span>
+          </li>
+
+          <!-- 12.5 อื่น ๆ ตามต้องการ -->
+          <li class="list-group-item d-flex flex-wrap align-items-center gap-2 py-3 bg-body-tertiary">
+            <strong data-i18n="contact_uni_label">เว็บไซต์สถาบันการศึกษา (Institute Website):</strong>
+            <a href="http://pim.ac.th" target="_blank" rel="noopener noreferrer" class="link-primary text-decoration-none fw-semibold">
+              http://pim.ac.th <i class="bi bi-box-arrow-up-right small"></i>
+            </a>
+          </li>
+
+          <li class="list-group-item d-flex flex-wrap align-items-center gap-2 py-3 bg-body-tertiary">
+            <strong data-i18n="contact_role_label">สายงานที่สนใจ (Target Role):</strong>
+            <span>Application Support Specialist / Database &amp; IT System Store Service</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-top bg-body py-4 mt-4 d-print-none">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2 text-body-secondary small">
+      <div>
+        © 2026 <span class="fw-semibold text-body">นายชินกฤต ปัดทุม (Chinnakrit Patthum)</span> — Individual Project [IP1]: My Resume
+      </div>
+      <div>
+        <a href="http://pim.ac.th" target="_blank" rel="noopener noreferrer" class="link-primary text-decoration-none fw-semibold">
+          <i class="bi bi-mortarboard-fill me-1"></i>Panyapiwat Institute of Management (PIM)
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>
